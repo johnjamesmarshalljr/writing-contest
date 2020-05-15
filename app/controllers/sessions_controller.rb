@@ -12,8 +12,8 @@ class SessionsController < ApplicationController
 
     if new_member && new_member.authenticate(params[:password]) # find a user & password is right
       # login & redirct sowmehere in site
-      session[:user_id] = new_member.id
-      redirect to '/rooms'
+      session[:member_id] = new_member.id
+      redirect to '/submissions'
     else
       # alert('Error with login info Plz try again')
        erb :'sessions/new'

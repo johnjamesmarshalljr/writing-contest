@@ -12,7 +12,7 @@ class MembersController < ApplicationController
     new_member = Member.new(params)
     if new_member.save # saves member into table
       # auth member into app
-      session[:user_id] = new_member.id
+      session[:member_id] = new_member.id
 
       #redirect to '/rooms'
     else

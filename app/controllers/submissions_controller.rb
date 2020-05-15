@@ -39,14 +39,14 @@ class SubmissionsController < ApplicationController
     end
   end
 
-  get '/rooms/:id/edit' do # EDIT route
+  get '/submissions/:id/edit' do # EDIT route
     # display form to edit room obj form
-    @room_obj = Room.find_by(id: params[:id])
+    @submission_obj = Submission.find_by(id: params[:id])
 
-    erb :'rooms/edit'
+    erb :'submission/edit'
   end
 
-  patch '/rooms/:id' do # update data in table w/user input
+  patch '/submissions/:id' do # update data in table w/user input
     # binding.pry
     # option 1
     # @room_obj = Room.find_by(id: params[:id])
@@ -55,20 +55,23 @@ class SubmissionsController < ApplicationController
     # @room_obj.use = params[:use] ? true : false
     # @room_obj.save
 
-    @room_obj = Room.find_by(id: params[:id])
+    @submission_obj = Submission.find_by(id: params[:id])
 
-    @room_obj.update(
-      theme: params[:theme],
-      name: params[:name],
-      use: params[:use]
+    @submission_obj.update(
+      category: params[:category],
+      author: params[:author],
+      email: params[:email],
+      date_published: params[:date_published],
+      title: params[:title],
+      article: params[:article]
     )
 
-    redirect '/rooms'
+    redirect '/submissions'
   end
 
-  delete '/rooms/:id' do #delete obj from table
-    @room_obj = Room.find_by(id: params[:id])
-    @room_obj.delete # | @room.obj.destory
-    redirect '/rooms'
+  delete '/submissions/:id' do #delete obj from table
+    @submission_obj = Submission.find_by(id: params[:id])
+    @submission_obj.delete # | @room.obj.destory
+    redirect '/submissions'
   end
 end
