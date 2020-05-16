@@ -5,4 +5,6 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 run ApplicationController
-#use MembersController
+use MembersController
+use SessionsController
+use SubmissionsController
