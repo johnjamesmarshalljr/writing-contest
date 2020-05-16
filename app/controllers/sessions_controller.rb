@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
       session[:member_id] = new_member.id
       redirect to '/submissions'
     else
-      # alert('Error with login info Plz try again')
+      # alert('Error with login info ')
        erb :'sessions/new'
     end
   end

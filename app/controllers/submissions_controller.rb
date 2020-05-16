@@ -1,18 +1,18 @@
 class SubmissionsController < ApplicationController
-  # routes consist of
-  # HTTP Verb - URL - Block
-  get '/submissions' do # index route
-    # binding.pry
+
+  get '/submissions' do # index
+
     redirect '/' if !(is_logged_in?)
 
-    # a list of rooms from the table
+    # a list of all member submissions from the table
+    #list just this year
     @all_rooms = Submissions.all # <~ connect 2 table via MODEL
-    # binding.pry
+
     erb :'submissions/index' # render the index view
   end
 
   get '/submissions/new' do # display form to create a new submission obj
-    # binding.pry
+
     erb :'submissions/new'
   end
 
@@ -28,10 +28,10 @@ class SubmissionsController < ApplicationController
   get '/submissions/:id' do # SHOW route
     redirect '/' if !(is_logged_in?)
 
-    # display ONE room obj
+    # display ONE  obj
     # binding.pry
     @submission_obj = Submission.find_by(id: params[:id])
-    # @room_obj = Room.find( params[:id])
+    # @submission_obj = Submission.find( params[:id])
     if @submission_obj
       erb :'submissions/show.html'
     else
@@ -40,20 +40,19 @@ class SubmissionsController < ApplicationController
   end
 
   get '/submissions/:id/edit' do # EDIT route
-    # display form to edit room obj form
+    # display form to edit  obj form
     @submission_obj = Submission.find_by(id: params[:id])
 
     erb :'submission/edit'
   end
 
   patch '/submissions/:id' do # update data in table w/user input
-    # binding.pry
     # option 1
-    # @room_obj = Room.find_by(id: params[:id])
-    # @room_obj.theme = params[:theme]
-    # @room_obj.name = params[:name]
-    # @room_obj.use = params[:use] ? true : false
-    # @room_obj.save
+    # @submission_obj = Submission.find_by(id: params[:id])
+    # @submission_obj.theme = params[:theme]
+    # @submission_obj.name = params[:name]
+    #@submission_obj.use = params[:use] ? true : false
+    # @submission_obj.save
 
     @submission_obj = Submission.find_by(id: params[:id])
 
@@ -71,7 +70,7 @@ class SubmissionsController < ApplicationController
 
   delete '/submissions/:id' do #delete obj from table
     @submission_obj = Submission.find_by(id: params[:id])
-    @submission_obj.delete # | @room.obj.destory
+    @submission_obj.delete # | @submission_obj.destory
     redirect '/submissions'
   end
 end
