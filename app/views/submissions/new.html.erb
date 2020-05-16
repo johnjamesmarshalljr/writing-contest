@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/stylesheets/page_styles.css">
+</head>
+<body>
+<div class="topnav">
+  <a class="active" href="/parks">Home</a>
+  <a href="/parks/new">New Submission</a>
+  <a href="/account">Account</a>
+  <a href="/logout">Logout</a><br>
+</div>
+		<h1><a>Entry Form </a></h1>
+		<form  method="post" action="/submissions">
+			<p>Fill out the form to complete your entry:</p>
+		<div>
+			<input id="category" name="category" type="integer" placeholder="Category Number">
+		</div>
+		<div>
+			<input id="author" name="author" type="text" placeholder="Author">
+		</div>
+		<div>
+			<input id="email" name="email" type="text" placeholder="Email">
+		</div>
+		<div>
+			<input id="date_published" name="date_published" type="datetime" placeholder="Date Published - MM-DD-YYYY:">
+		</div>
+		<div>
+			<input id="title" name="title"  type="text" placeholder="Title">
+    <div>
+			<input id="article" name="article"  type="text" placeholder="Notes:">
+		</div>
+		<br>
+		<br>
+		<input type="submit" class="submit_button" value="Submit Park">
+		</form>
+	</body>
+</html>
