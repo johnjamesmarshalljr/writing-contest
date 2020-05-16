@@ -22,7 +22,7 @@ class SubmissionsController < ApplicationController
   # option 3
     member = current_member
 
-    @new_submission = member.submission.new(params)
+    @new_submission = member.submissions.new(params)
 
     @new_submission.save
 
