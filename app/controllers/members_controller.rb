@@ -14,7 +14,7 @@ class MembersController < ApplicationController
       # auth member into app
       session[:member_id] = new_member.id
 
-      #redirect to '/rooms'
+      redirect to '/submissions/new'
     else
       erb :'members/new'
     end
