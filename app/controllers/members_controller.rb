@@ -9,14 +9,16 @@ class MembersController < ApplicationController
 
   post '/members' do # add member to table & auth use in app
     # binding.pry
+    if params[:email] == "" || params[:password] == ""
+        redirect '/members/new'
+    else
     new_member = Member.new(params)
-    if new_member.save # saves member into table
+    new_member.save # saves member into table
       # auth member into app
       session[:member_id] = new_member.id
 
-      redirect to '/submissions/new'
-    else
-      erb :'members/new'
+      erb :'/submissions/index'
+
     end
   end
 end

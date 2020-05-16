@@ -6,7 +6,9 @@ class SubmissionsController < ApplicationController
 
     # a list of all member submissions from the table
     #list just this year
-    @all_rooms = Submissions.all # <~ connect 2 table via MODEL
+    #binding.pry
+    @member = current_member
+    @submissions = @member.submissions.all # <~ connect 2 table via MODEL
 
     erb :'submissions/index' # render the index view
   end
@@ -18,7 +20,9 @@ class SubmissionsController < ApplicationController
 
   post '/submissions' do # create a new sub obj based on form (user) input
   # option 3
-    @new_submission = Submission.new(params)
+    member = current_member
+
+    @new_submission = member.submission.new(params)
 
     @new_submission.save
 
