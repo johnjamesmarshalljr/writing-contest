@@ -17,7 +17,7 @@ class MembersController < ApplicationController
       # auth member into app
       session[:member_id] = new_member.id
 
-      erb :'/submissions/index'
+      erb :'/submissions/new.html'
 
     end
   end
