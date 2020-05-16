@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200516021605) do
+ActiveRecord::Schema.define(version: 20200516213957) do
 
   create_table "members", force: :cascade do |t|
     t.string   "email"
@@ -21,12 +21,13 @@ ActiveRecord::Schema.define(version: 20200516021605) do
   end
 
   create_table "submissions", force: :cascade do |t|
-    t.integer  "category"
-    t.string   "author"
-    t.string   "email"
-    t.datetime "date_published"
-    t.string   "title"
-    t.string   "article"
+    t.integer "category"
+    t.string  "author"
+    t.string  "email"
+    t.string  "date_published"
+    t.string  "title"
+    t.string  "article"
+    t.integer "member_id"
   end
 
 end
