@@ -10,12 +10,12 @@ class SubmissionsController < ApplicationController
     @member = current_member
     @submissions = @member.submissions.all # <~ connect 2 table via MODEL
 
-    erb :'submissions/index' # render the index view
+    erb :'submissions/index.html' # render the index view
   end
 
   get '/submissions/new' do # display form to create a new submission obj
 
-    erb :'submissions/new'
+    erb :'submissions/new.html'
   end
 
   post '/submissions' do # create a new sub obj based on form (user) input
@@ -47,7 +47,7 @@ class SubmissionsController < ApplicationController
     # display form to edit  obj form
     @submission_obj = Submission.find_by(id: params[:id])
 
-    erb :'submission/edit'
+    erb :'submission/edit.html'
   end
 
   patch '/submissions/:id' do # update data in table w/user input
