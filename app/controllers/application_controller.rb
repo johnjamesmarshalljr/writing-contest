@@ -16,6 +16,7 @@ class ApplicationController < Sinatra::Base
   helpers do
       def is_logged_in? # checking to see if a member is logged in
         # !!session[:member_id]
+        # !!current_member
         session.has_key?(:member_id)
       end
 

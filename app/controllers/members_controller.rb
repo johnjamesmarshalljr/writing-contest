@@ -3,7 +3,7 @@ class MembersController < ApplicationController
 
   # signup - new user, add & auth them to out app
 
-  get '/members/new' do # display a form
+  get '/members/new' do # display a form // sign up form
     erb :'members/new'
   end
 
@@ -18,6 +18,7 @@ class MembersController < ApplicationController
       session[:member_id] = new_member.id
 
       erb :'/submissions/new.html'
+      # redirect '/submissions/new.html'
 
     end
   end

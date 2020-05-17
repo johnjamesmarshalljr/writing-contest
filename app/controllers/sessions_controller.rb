@@ -7,15 +7,16 @@ class SessionsController < ApplicationController
   end
 
   post '/login' do
+    #recieve the log in form, find user and log them in (create a session)
     # binding.pry
     new_member = Member.find_by(email: params[:email])
 
     if new_member && new_member.authenticate(params[:password]) # find a user & password is right
       # login & redirct sowmehere in site
-      session[:member_id] = new_member.id
+      session[:member_id] = new_member.id #this logs the user in
       redirect '/submissions/new.html'
     else
-      # alert('Error with login info ')
+      # ADD ERROR: alert('Error with login info ')
        erb :'sessions/new'
     end
   end
