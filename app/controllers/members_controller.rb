@@ -9,17 +9,36 @@ class MembersController < ApplicationController
 
   post '/members' do # add member to table & auth use in app
     # binding.pry
-    if params[:email] == "" || params[:password] == ""
-        redirect '/members/new'
+    if params[:email] != "" && params[:password] != "" && params[:name] != ""
+      #valid input
+    @member = Member.create(params)
+      redirect "/members/#{@member.id}"
     else
-    new_member = Member.new(params)
-    new_member.save # saves member into table
-      # auth member into app
-      session[:member_id] = new_member.id
-
-      erb :'/submissions/new.html'
-      # redirect '/submissions/new.html'
-
+      #not valid input
     end
   end
-end
+
+
+
+    #     redirect '/members/new'
+    # else
+    # new_member = Member.new(params)
+    # new_member.save # saves member into table
+      # auth member into app
+      # session[:member_id] = new_member.id
+
+      # erb :'/submissions/new.html'
+      #redirecting here doesn't work for some reason
+      #always sent me to get /submissions for some reason
+      # redirect '/submissions/new.html'
+
+
+
+
+  get '/members/:id' do #profile SHOW
+    # redirect '/' if !(is_logged_in?)
+    #binding.pry
+    @member = Member.find_by(id: params[:id])
+    erb :'/members/show.html'
+    end
+  end
