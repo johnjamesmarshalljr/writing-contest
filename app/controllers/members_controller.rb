@@ -11,11 +11,22 @@ class MembersController < ApplicationController
     # binding.pry
     if params[:email] != "" && params[:password] != "" && params[:name] != ""
       #valid input
+
     @member = Member.create(params)
+    session[:member_id] = @member.id
       redirect "/members/#{@member.id}"
     else
       #not valid input
     end
+  end
+
+  get '/members/show' do
+    @member = current_member
+
+     binding.pry
+    # @member = Member.find_by(id: params[:id])
+
+    erb :'/members/show.html'
   end
 
 
