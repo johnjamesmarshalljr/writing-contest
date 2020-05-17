@@ -23,7 +23,7 @@ class MembersController < ApplicationController
   get '/members/show' do
     @member = current_member
 
-     binding.pry
+    # binding.pry
     # @member = Member.find_by(id: params[:id])
 
     erb :'/members/show.html'
