@@ -21,8 +21,9 @@ class MembersController < ApplicationController
   end
 
   get '/members/show' do
+    #binding.pry
     @member = current_member
-
+    @submissions = @member.submissions.all
     # binding.pry
     # @member = Member.find_by(id: params[:id])
 
@@ -49,7 +50,8 @@ class MembersController < ApplicationController
   get '/members/:id' do #profile SHOW
     # redirect '/' if !(is_logged_in?)
     #binding.pry
-    @member = Member.find_by(id: params[:id])
+    @member = current_member
+    @submissions = @member.submissions.all
     erb :'/members/show.html'
     end
   end

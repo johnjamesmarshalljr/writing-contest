@@ -9,7 +9,7 @@ class SubmissionsController < ApplicationController
     #binding.pry
     @member = current_member
     @submissions = @member.submissions.all # <~ connect 2 table via MODEL
-
+    # binding.pry
     erb :'submissions/index.html' # render the index view
   end
 

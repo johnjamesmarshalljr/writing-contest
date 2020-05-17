@@ -1,9 +1,6 @@
 <!-- show profile info for specific member
 show where to sign up -->
 
-
-<h2><%= @member.name %>'s Show Page</h2>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +12,16 @@ show where to sign up -->
   <a href="/submissions/new">New Submission</a>
   <a href="/members/show">Profile</a>
   <a href="/logout">Logout</a><br>
+</div>
+<div>
+<h2><%= @member.name %>'s LSWA Profile Page</h2><br>
+<h4>These are <%= @member.name %>'s Submissions</h4><br>
+  <% @submissions.each do |sub|%>
+  <ul>
+    <li>Title: <%=sub.title%></li>
+    <li>Category:<%=sub.category %></li>
+    <li>Date Published: <%=sub.date_published %></li>
+   <% end %>
 </div>
 		<h1><a>Entry Form </a></h1>
 		<form  method="post" action="/submissions">
