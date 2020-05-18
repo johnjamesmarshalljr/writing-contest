@@ -1,8 +1,8 @@
 <ol>
 <% @submissions.each do |s|%>
-  <li><a href="/submissions/<%= s.title %>"></li></a>
+  <li><a href="/submissions/<%= s.id %>"><%=s.title%></li></a>
   <% end %>
-
+</ol>
 
 
 

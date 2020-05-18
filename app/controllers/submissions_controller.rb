@@ -6,7 +6,7 @@ class SubmissionsController < ApplicationController
     #list just this year
     #binding.pry
     @member = current_member
-    @submissions = @member.submissions.all # <~ connect 2 table via MODEL
+    @submissions = @member.submissions # <~ connect 2 table via MODEL
     # binding.pry
     erb :'submissions/index.html' # render the index view
   end
@@ -41,7 +41,7 @@ class SubmissionsController < ApplicationController
   get '/submissions/:id/edit' do # EDIT route
     # display form to edit  obj form
     @submission_obj = Submission.find_by(id: params[:id])
-    erb :'submission/edit.html'
+    erb :'submissions/edit.html'
   end
 
   patch '/submissions/:id' do # update data in table w/user input

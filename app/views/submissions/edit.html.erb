@@ -6,27 +6,27 @@
 <body>
 
 		<h1><a>Edit Entry </a></h1>
-		<form action="/submissions/<%=@submission.id%>" method="post">
+		<form action="/submissions/<%=@submission_obj.id%>" method="post">
       <input type="hidden" name="_method" id="hidden" value="PATCH">
 			<p>Enter all forms to edit your entry:</p>
-		<div>
-			<input id="category" name="category" value="<%= @submission.category %> type="integer" placeholder="Category Number">
-		</div>
-		<div>
-			<input id="author" name="author" value="<%= @submission.author %>type="text" placeholder="Author">
-		</div>
-		<div>
-			<input id="email" name="email" value="<%= @submission.email %>type="text" placeholder="Email">
-		</div>
-		<div>
-			<input id="date_published" name="date_published" value="<%= @submission.date_published %>type="datetime" placeholder="Date Published - MM-DD-YYYY:">
-		</div>
-		<div>
-			<input id="title" name="title" value="<%= @submission.title %> type="text" placeholder="Title">
-    <div>
-      <textarea name="article" id="article" rows="8" cols="80"> value="<%= @submission.article %></textarea>
-			<!-- <input id="article" name="article"  type="text" placeholder="Article goes here:"> -->
-		</div>
+			<div>
+			  <input id="category" name="category" value="<%= @submission_obj.category %>" type="integer" placeholder="Category Number">
+			</div>
+			<div>
+			  <input id="author" name="author" value="<%= @submission_obj.author %>"type="text" placeholder="Author">
+			</div>
+			<div>
+			  <input id="email" name="email" value="<%= @submission_obj.email %>"type="text" placeholder="Email">
+			</div>
+			<div>
+			  <input id="date_published" name="date_published" value="<%= @submission_obj.date_published %>"type="datetime" placeholder="Date Published - MM-DD-YYYY:">
+			</div>
+			<div>
+			  <input id="title" name="title" value="<%= @submission_obj.title %>" type="text" placeholder="Title">
+			</div>
+			<div>
+			  <textarea name="article" id="article" rows="8" cols="80" ><%= @submission_obj.article %></textarea>
+			</div>
 		<br>
 		<br>
 		<input type="submit" class="submit_button" value="Submit Entry">

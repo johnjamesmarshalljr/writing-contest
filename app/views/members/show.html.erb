@@ -12,9 +12,10 @@ show where to sign up -->
 <h4><%= @member.name %>, you have submitted <%=@member.submissions.count%> entries:</h4><br>
   <% @submissions.each do |sub|%>
   <ul>
-    <li>Title: <%=sub.title%></li>
+    <li>Title:<a href="/submissions/<%=sub.id%>"><%=sub.title%></a></li>
     <li>Category:<%=sub.category %></li>
-    <li>Date Published: <%=sub.date_published %></li><br>
+    <li>Date Published: <%=sub.date_published %></li>
+    <a href="/submissions/<%=sub.id%>/edit">Edit</a><br>
    <% end %>
    <hr style="border: 4px dotted white;" /><br>
 </div>
