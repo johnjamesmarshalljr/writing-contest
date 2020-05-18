@@ -4,15 +4,15 @@
 <link rel="stylesheet" href="/stylesheets/page_styles.css">
 </head>
 <body>
-<div class="topnav">
-  <a class="active" href="/submissions">Home</a>
-  <a href="/submissions/new">New Submission</a>
-  <a href="/members/show">Profile</a>
-  <a href="/logout">Logout</a><br>
+
+<div class="Thx">
+<h3>Thanks <%= @member.name %>! Your entry has been successfully submitted</h3><br>
+<h4>Category: <%= @submission_obj.category %></h4><br>
+<h4>Title: <%= @submission_obj.title %></h4><br>
+<h5>Date Published: <%= @submission_obj.date_published %></h5><br>
+<h5>Article: <%= @submission_obj.article %> ...</h5><br>
 </div>
 <div>
-<h2>Thanks<%= @member.name %>! Your entry has been successfully submitted</h2><br>
-<h4><%= @submission_obj.title %></h4>
 <h2>You have now submitted <%=@member.submissions.count%> entries:</h2><br>
   <% @submissions.each do |sub|%>
   <ul>

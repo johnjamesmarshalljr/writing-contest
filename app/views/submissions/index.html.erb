@@ -1,3 +1,12 @@
+<ol>
+<% @submissions.each do |s|%>
+  <li><a href="/submissions/<%= s.title %>"></li></a>
+  <% end %>
+
+
+
+
+
 #return just category name and title of each submission object (possibly with index)
 
 @submissions

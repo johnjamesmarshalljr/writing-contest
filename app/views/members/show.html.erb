@@ -7,12 +7,6 @@ show where to sign up -->
 <link rel="stylesheet" href="/stylesheets/page_styles.css">
 </head>
 <body>
-<div class="topnav">
-  <a class="active" href="/submissions">Home</a>
-  <a href="/submissions/new">New Submission</a>
-  <a href="/members/show">Profile</a>
-  <a href="/logout">Logout</a><br>
-</div>
 <div>
 <h2><%= @member.name %>'s LSWA Profile Page</h2><br>
 <h4><%= @member.name %>, you have submitted <%=@member.submissions.count%> entries:</h4><br>

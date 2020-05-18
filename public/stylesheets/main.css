@@ -15,7 +15,9 @@
   body {
     font-family: helvetica;
     font-weight: 50;
+     background-image: linear-gradient(skyblue, pink);
     color: white;
+
   }
 
   .wrapper {
@@ -56,11 +58,14 @@
 
   .content {
     float: left;
-    width: 60%; /* 480px / 800px */
+    width: 100%; /* 480px / 800px */
+    font-size: 20px;
+    font-family: monospace;
+
   }
 
   .sidebar {
-    background: #eee;
+    background: #66ffff;
     border: 1px solid #ccc;
     float: right;
     padding: 2.08333333333%; /* 5px / 240px */
@@ -103,7 +108,7 @@
   }
 
   h1 {
-    font-size: 24px;
+    font-size: 34px;
     line-height: 36px;
   }
 
