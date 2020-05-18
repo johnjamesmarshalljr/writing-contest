@@ -20,6 +20,7 @@ class SubmissionsController < ApplicationController
 
   post '/submissions' do # create a new sub obj based on form (user) input
   # option 3
+      # binding.pry
     member = current_member
 
     @new_submission = member.submissions.new(params)
@@ -35,6 +36,9 @@ class SubmissionsController < ApplicationController
     # display ONE  obj
     # binding.pry
     @submission_obj = Submission.find_by(id: params[:id])
+    @member = current_member
+    @submissions = @member.submissions.all
+        # binding.pry
     # @submission_obj = Submission.find( params[:id])
     if @submission_obj
       erb :'submissions/show.html'

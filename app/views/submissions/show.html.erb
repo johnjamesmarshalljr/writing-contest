@@ -1,1 +1,26 @@
-#show one submission object
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/stylesheets/page_styles.css">
+</head>
+<body>
+<div class="topnav">
+  <a class="active" href="/submissions">Home</a>
+  <a href="/submissions/new">New Submission</a>
+  <a href="/members/show">Profile</a>
+  <a href="/logout">Logout</a><br>
+</div>
+<div>
+<h2>Thanks<%= @member.name %>! Your entry has been successfully submitted</h2><br>
+<h4><%= @submission_obj.title %></h4>
+<h2>You have now submitted <%=@member.submissions.count%> entries:</h2><br>
+  <% @submissions.each do |sub|%>
+  <ul>
+    <li>Title: <%=sub.title%></li>
+    <li>Category:<%=sub.category %></li>
+    <li>Date Published: <%=sub.date_published %></li><br>
+   <% end %>
+   <hr style="border: 4px dotted white;" /><br>
+</div>
+	</body>
+</html>
