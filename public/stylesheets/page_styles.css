@@ -17,7 +17,7 @@
 
   /* Change the color of links on hover */
   .topnav a:hover {
-    background-color: #ddd;
+    background-color: #4CAF50;
     color: black;
   }
 
@@ -28,7 +28,7 @@
   }
 
   .myButton {
-    background-color: #4CAF50; /* Green */
+    background-color: #0033cc; /* Green */
     border: none;
     color: white;
     padding: 5px 15px;
@@ -59,9 +59,20 @@
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 2px;
     box-sizing: border-box;
   }
+
+  input[type=integer], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+  }
+
 
   input[type=password], select {
     width: 50%;
@@ -69,7 +80,7 @@
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 2px;
     box-sizing: border-box;
   }
 
@@ -83,9 +94,26 @@
     border-radius: 4px;
     cursor: pointer;
   }
+  p { width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-style: oblique;
+  }
 
-  input[type=submit]:hover {
-    background-color: #45a049;
+  input[type=submit] {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    border-radius: 4px;
   }
 
   div {
@@ -94,12 +122,13 @@
   }
 
   textarea {
-    width: 50%;
-    height: 150px;
-    padding: 12px 20px;
+    position: relative;
+    right: 15px;
+    width: 60%;
+    height: 300px;
+    padding: 14px 20px;
     box-sizing: border-box;
     border: 1px solid #ccc;
-    border-radius: 3px;
-    resize: none;
-    font-family: courier;
+    border-radius: 2px;
+    font-family: Helvetica;
   }

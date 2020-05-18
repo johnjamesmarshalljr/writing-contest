@@ -13,12 +13,13 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    font-family: Impact, Charcoal, sans-serif;
-    font-weight: 150;
+    font-family: helvetica;
+    font-weight: 50;
+    color: white;
   }
 
   .wrapper {
-    background: #E6E6FA;
+    background: #ff6666;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);

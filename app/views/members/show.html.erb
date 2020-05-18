@@ -15,15 +15,16 @@ show where to sign up -->
 </div>
 <div>
 <h2><%= @member.name %>'s LSWA Profile Page</h2><br>
-<h4>These are <%= @member.name %>'s Submissions</h4><br>
+<h4><%= @member.name %>, you have submitted <%=@member.submissions.count%> entries:</h4><br>
   <% @submissions.each do |sub|%>
   <ul>
     <li>Title: <%=sub.title%></li>
     <li>Category:<%=sub.category %></li>
-    <li>Date Published: <%=sub.date_published %></li>
+    <li>Date Published: <%=sub.date_published %></li><br>
    <% end %>
+   <hr style="border: 4px dotted white;" /><br>
 </div>
-		<h1><a>Entry Form </a></h1>
+		<h1><a>Entry Form </a></h1><br>
 		<form  method="post" action="/submissions">
 			<p>Fill out the form to complete your entry:</p>
 		<div>
@@ -36,12 +37,12 @@ show where to sign up -->
 			<input id="email" name="email" type="text" placeholder="Email">
 		</div>
 		<div>
-			<input id="date_published" name="date_published" type="datetime" placeholder="Date Published - MM-DD-YYYY:">
+			<input id="date_published" name="date_published" type="text" placeholder="Date Published - MM-DD-YYYY:">
 		</div>
 		<div>
 			<input id="title" name="title"  type="text" placeholder="Title">
     <div>
-      <textarea name="article" rows="8" cols="80"></textarea>
+      <textarea name="article" placeholder="Paste article here" rows="8" cols="80"></textarea>
       <!-- <input id="article" name="article"  type="text" placeholder="Article goes here:"> -->
 		</div>
 		<br>
