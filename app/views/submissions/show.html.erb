@@ -13,13 +13,10 @@
 <h5>Article: <%= @submission_obj.article %> ...</h5><br>
 </div>
 <div>
-<h2>You have now submitted <%=@member.submissions.count%> entries:</h2><br>
-  <% @submissions.each do |sub|%>
-  <ul>
-    <li>Title: <%=sub.title%></li>
-    <li>Category:<%=sub.category %></li>
-    <li>Date Published: <%=sub.date_published %></li><br>
-   <% end %>
+    <form action="/submissions/<%=@submission_obj.id%>" method="POST">
+        <input type="hidden" name="_method" id="hidden" value="DELETE">
+        <input type='submit' class="delete_button" value= 'Delete Submission'>
+    </form>
    <hr style="border: 4px dotted white;" /><br>
 </div>
 	</body>

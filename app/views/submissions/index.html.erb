@@ -1,8 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/stylesheets/page_styles.css">
+</head>
+<body>
+  <div class="Index">
+    <h3>Here are your current submissions:</h3>
 <ol>
-<% @submissions.each do |s|%>
-  <li><a href="/submissions/<%= s.id %>"><%=s.title%></li></a>
+<% @submissions.each.with_index do |s|%>
+  <li><a href="/submissions/<%= s.id %>">Category(<%=s.category%>): "<%=s.title%>"</li></a>
   <% end %>
 </ol>
+</div>
 
 
 
@@ -19,3 +28,7 @@ button to create new
 
 
 in post for Submissions assign user to the sub
+
+
+</body>
+</html>
