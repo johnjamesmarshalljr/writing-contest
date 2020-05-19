@@ -5,7 +5,11 @@
 </head>
 <body>
   <div class="Index">
+    <%if @submissions.empty?%>
+    <h2> You have no submissions yet <h2>
+    <% else%>
     <h3>Here are your current submissions:</h3>
+    <% end%>
 <ol>
 <% @submissions.each.with_index do |s|%>
   <li><a href="/submissions/<%= s.id %>">Category(<%=s.category%>): "<%=s.title%>"</li></a>
