@@ -20,7 +20,6 @@
         <% if is_logged_in? %>
             <a href="/submissions/new">New Submission</a>
             <a href="/members/<%=current_member.id%>">Profile</a>
-            <a href="/members/<%=current_member.id%>">Edit Submission</a>
             <a href="/logout">Logout</a><br>
         <% else %>
           <a class="active" href="/welcome">Welcome</a>
