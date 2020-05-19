@@ -29,7 +29,8 @@ class SubmissionsController < ApplicationController
     @submission_obj = Submission.find_by(id: params[:id])
     @member = current_member
     @submissions = @member.submissions.all
-        # binding.pry
+    @my_article = @submission_obj.article
+    @splitted = @my_article.split()
     # @submission_obj = Submission.find( params[:id])
     if @submission_obj
       erb :'submissions/show.html'

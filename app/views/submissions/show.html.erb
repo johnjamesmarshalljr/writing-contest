@@ -6,11 +6,11 @@
 <body>
 
 <div class="Thx">
-<h3>Thanks <%= @member.name %>! Your entry has been successfully submitted</h3><br>
+<h3>SUCCESS! Here is your submission:</h3><br>
 <h4>Category: <%= @submission_obj.category %></h4><br>
 <h4>Title: <%= @submission_obj.title %></h4><br>
 <h5>Date Published: <%= @submission_obj.date_published %></h5><br>
-<h5>Article: <%= @submission_obj.article %> ...</h5><br>
+<h5>Article: "<%= (@splitted[0].to_s) + " " + (@splitted[1].to_s) + " " + (@splitted[2].to_s)%>..."</h5><br>
 </div>
 <div>
     <form action="/submissions/<%=@submission_obj.id%>" method="POST">
