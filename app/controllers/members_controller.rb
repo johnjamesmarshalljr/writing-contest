@@ -3,6 +3,7 @@ class MembersController < ApplicationController
 
   # signup - new user, add & auth them to out app
 
+
   get '/members/new' do # display a form // sign up form
     erb :'members/new'
   end

@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="/stylesheets/page_styles.css">
 </head>
 <body>
+	<img src="/images/Screen Shot 2020-05-20 at 1.46.29 PM.png" alt="banner" class: "center" width="100%" height="5%" >
 
 		<h1><a>Edit Entry </a></h1>
 		<form action="/submissions/<%=@submission_obj.id%>" method="post">
@@ -19,7 +20,7 @@
 			  <input id="email" name="email" value="<%= @submission_obj.email %>"type="text" placeholder="Email">
 			</div>
 			<div>
-			  <input id="date_published" name="date_published" value="<%= @submission_obj.date_published %>"type="datetime" placeholder="Date Published - MM-DD-YYYY:">
+			  <input id="date_published" name="date_published" value="<%= @submission_obj.date_published %>"type="text" placeholder="Date Published - MM-DD-YYYY:">
 			</div>
 			<div>
 			  <input id="title" name="title" value="<%= @submission_obj.title %>" type="text" placeholder="Title">

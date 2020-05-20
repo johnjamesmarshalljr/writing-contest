@@ -16,11 +16,19 @@ class SubmissionsController < ApplicationController
   end
 
   post '/submissions' do # create a new sub obj based on form (user) input
+    if !is_logged_in?
+      redirect '/'
+    end
+
+    if params[:article] != ""
     member = current_member
     @new_submission = member.submissions.new(params)
     @new_submission.save
     redirect "/submissions/#{@new_submission.id}"
+  else
+    redirect '/submissions/new'
   end
+end
 
   get '/submissions/:id' do # SHOW route
     redirect '/' if !(is_logged_in?)
@@ -41,11 +49,15 @@ class SubmissionsController < ApplicationController
 
   get '/submissions/:id/edit' do # EDIT route
     # display form to edit  obj form
+    redirect '/' if !(is_logged_in?)
     @submission_obj = Submission.find_by(id: params[:id])
     erb :'submissions/edit.html'
   end
 
   patch '/submissions/:id' do # update data in table w/user input
+    if !is_logged_in?
+      redirect '/'
+    end
     # option 1
     # @submission_obj = Submission.find_by(id: params[:id])
     # @submission_obj.theme = params[:theme]
@@ -65,6 +77,7 @@ class SubmissionsController < ApplicationController
   end
 
   delete '/submissions/:id' do #delete obj from table
+    redirect '/' if !(is_logged_in?)
     @submission_obj = Submission.find_by(id: params[:id])
     @submission_obj.delete # | @submission_obj.destory
     redirect '/submissions'

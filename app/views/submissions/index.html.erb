@@ -4,35 +4,22 @@
 <link rel="stylesheet" href="/stylesheets/page_styles.css">
 </head>
 <body>
-  <div class="Index">
-    <%if @submissions.empty?%>
-    <h2> You have no submissions yet <h2>
-    <% else%>
-    <h3>Here are your current submissions:</h3>
-    <% end%>
-<ol>
-<% @submissions.each.with_index do |s|%>
-  <li><a href="/submissions/<%= s.id %>">Category(<%=s.category%>): "<%=s.title%>"</li></a>
-  <% end %>
-</ol>
-</div>
+  <img src="/images/Screen Shot 2020-05-20 at 1.46.45 PM.png" alt="banner" class: "center" width="100%" height="5%" >
 
+  <div>
+  <h2><%= @member.name %>'s LSWA Profile Page</h2><br>
+  <h4><%= @member.name %>, you have submitted <%=@member.submissions.count%> entries:</h4><br>
+    <% @submissions.each.with_index(1) do |sub, idx|%>
+    <ul>
+      <li><%=idx%> Title:<a href="/submissions/<%=sub.id%>"><%=sub.title%></a></li>
+      <li>Category:<%=sub.category %></li>
+      <li>Date Published: <%=sub.date_published %></li>
+      <a href="/submissions/<%=sub.id%>/edit">Edit</a><br>
+      <form action="/submissions/<%=sub.id%>" method="POST">
+          <input type="hidden" name="_method" id="hidden" value="DELETE">
+          <input type='submit' class="delete_button" value= 'Delete Submission'>
+      </form>
 
-
-
-#return just category name and title of each submission object (possibly with index)
-
-@submissions
-iterate over Submissions
-
-if .empty??
-
-
-button to create new
-
-
-in post for Submissions assign user to the sub
-
-
-</body>
-</html>
+     <% end %>
+     <hr style="border: 4px dotted white;" /><br>
+  </div>

@@ -1,3 +1,7 @@
+h3 {
+
+}
+
 .topnav {
     background-color: #223;
     overflow: hidden;
@@ -68,6 +72,16 @@
     text-align: center;
     border-radius: 4px;
     display: inline-block;
+  }
+
+  input[type=string], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
   }
 
   input[type=text], select {
@@ -142,6 +156,7 @@
     position: relative;
     right: 15px;
     width: 60%;
+    margin: 8px 0;
     height: 300px;
     padding: 14px 20px;
     box-sizing: border-box;

@@ -18,8 +18,10 @@
 <h4>Title: <%= @submission_obj.title %></h4><br>
 <h5>Date Published: <%= @submission_obj.date_published %></h5><br>
 <h5>Article: "<%= (@splitted[0].to_s) + " " + (@splitted[1].to_s) + " " + (@splitted[2].to_s)%>..."</h5><br>
+  <a href="/submissions/<%=@submission_obj.id%>/edit">Edit</a><br>
 </div>
 <div>
+
     <form action="/submissions/<%=@submission_obj.id%>" method="POST">
         <input type="hidden" name="_method" id="hidden" value="DELETE">
         <input type='submit' class="delete_button" value= 'Delete Submission'>
