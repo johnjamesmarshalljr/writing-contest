@@ -5,9 +5,7 @@
 </head>
 <body>
   <div class="container">
-  <img style="float: right;"src="/images/www.usnews.jpg" alt="fans" class: "center" width="50%" height="5%" >
-  <img style="float: left;"src="/images/www.usnews.jpg" alt="fans" class: "benter" width="50%" height="5%"><br>
- <br><hr style="border: 4px dotted white;" /><br>
+ <img src="/images/sports.png" alt="banner" class: "center" width="100%" height="5%" ><br>
 <hr style="zig-zag"/>
 </div><br>
 <div class="Thx">
@@ -20,13 +18,14 @@
 <h5>Article: "<%= (@splitted[0].to_s) + " " + (@splitted[1].to_s) + " " + (@splitted[2].to_s)%>..."</h5><br>
   <a href="/submissions/<%=@submission_obj.id%>/edit">Edit</a><br>
 </div>
-<div>
+<div class="delete_butt">
 
     <form action="/submissions/<%=@submission_obj.id%>" method="POST">
         <input type="hidden" name="_method" id="hidden" value="DELETE">
         <input type='submit' class="delete_button" value= 'Delete Submission'>
-    </form>
+    </form><br>
    <hr style="border: 4px dotted white;" /><br>
+
 </div>
 	</body>
 </html>

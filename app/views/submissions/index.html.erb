@@ -11,7 +11,7 @@
   <h4><%= @member.name %>, you have submitted <%=@member.submissions.count%> entries:</h4><br>
     <% @submissions.each.with_index(1) do |sub, idx|%>
     <ul>
-      <li><%=idx%> Title:<a href="/submissions/<%=sub.id%>"><%=sub.title%></a></li>
+      <li><%=idx%>) Title: <a href="/submissions/<%=sub.id%>"><%=sub.title%></a></li>
       <li>Category:<%=sub.category %></li>
       <li>Date Published: <%=sub.date_published %></li>
       <a href="/submissions/<%=sub.id%>/edit">Edit</a><br>

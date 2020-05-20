@@ -20,6 +20,26 @@
 
   }
 
+  @keyframes animation
+{
+    0% {
+        left: 0;
+    }
+    10% {
+        left: 50%;
+    }
+    100% {
+        left: 10%;
+    }
+}
+
+
+  header {
+    max-width: 200px;
+    max-height: 350px;
+    animation: 5s;
+  }
+
   .wrapper {
     background: #ff6666;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);

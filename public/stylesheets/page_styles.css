@@ -202,3 +202,12 @@ div[class=Thx] {
   max-width: 100%;
 height: auto;
 }
+
+img {
+box-shadow: 10px 10px;
+  border:2px solid #fff;
+
+  -moz-box-shadow: inset 10px 10px 50px #fff;
+  -webkit-box-shadow: inset 10px 10px 50px #fff;
+  box-shadow: inset 10px 10px 50px #fff;
+}
