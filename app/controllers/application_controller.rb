@@ -14,13 +14,11 @@ class ApplicationController < Sinatra::Base
   end
 
   helpers do
-      def is_logged_in? # checking to see if a member is logged in
-        # !!session[:member_id]
-        # !!current_member
+      def is_logged_in?
         session.has_key?(:member_id)
       end
 
-      def current_member # return user OBJECT logged in user info
+      def current_member
          @current_member ||= Member.find(session[:member_id]) if is_logged_in?
       end
     end

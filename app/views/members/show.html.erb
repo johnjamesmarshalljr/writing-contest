@@ -11,7 +11,10 @@ show where to sign up -->
 
   <div>
   <h2><%= @member.name %>'s LSWA Profile Page</h2><br>
-  <h4><%= @member.name %>, you have submitted <%=@member.submissions.count%> entries:</h4><br>
+  <h4><%= @member.name %>, here are your entries:</h4><br>
+   <% if @member.submissions.count == 0%>
+    Click <a href="/submissions/new">here</a> to add a new submission. <br>
+  <%else%>
     <% @submissions.each.with_index(1) do |sub, idx|%>
     <ul>
       <li><%=idx%>) Title: <a href="/submissions/<%=sub.id%>"><%=sub.title%></a></li>
@@ -22,7 +25,7 @@ show where to sign up -->
           <input type="hidden" name="_method" id="hidden" value="DELETE">
           <input type='submit' class="delete_button" value= 'Delete Submission'>
       </form>
-
+      <%end%>
      <% end %>
      <hr style="border: 4px dotted white;" /><br>
   </div>
