@@ -49,32 +49,39 @@ end
 
   get '/submissions/:id/edit' do # EDIT route
     # display form to edit  obj form
-    redirect '/' if !(is_logged_in?)
-    @submission_obj = Submission.find_by(id: params[:id])
-    erb :'submissions/edit.html'
+    set_submission
+    if is_logged_in?
+      if @submission_obj.member == current_member
+        erb :'submissions/edit.html'
+      else
+        redirect "members/#{current_member.id}"
+      end
+    else
+    redirect '/'
+  end
   end
 
   patch '/submissions/:id' do # update data in table w/user input
-    if !is_logged_in?
-      redirect '/'
-    end
-    # option 1
-    # @submission_obj = Submission.find_by(id: params[:id])
-    # @submission_obj.theme = params[:theme]
-    # @submission_obj.name = params[:name]
-    #@submission_obj.use = params[:use] ? true : false
-    # @submission_obj.save
-    @submission_obj = Submission.find_by(id: params[:id])
-    @submission_obj.update(
-      category: params[:category],
-      author: params[:author],
-      email: params[:email],
-      date_published: params[:date_published],
-      title: params[:title],
-      article: params[:article]
-    )
-    redirect '/submissions'
+    set_submission
+
+    if is_logged_in?
+      if @submission_obj.member == current_member
+              @submission_obj.update(
+            category: params[:category],
+            author: params[:author],
+            email: params[:email],
+            date_published: params[:date_published],
+            title: params[:title],
+            article: params[:article]
+          )
+    redirect "submissions/#{@submission_obj.id}"
+  else
+    redirect "members/#{current_member.id}"
   end
+else
+  redirect '/'
+end
+end
 
   delete '/submissions/:id' do #delete obj from table
     redirect '/' if !(is_logged_in?)
@@ -82,4 +89,10 @@ end
     @submission_obj.delete # | @submission_obj.destory
     redirect '/submissions'
   end
+
+  def set_submission
+    @submission_obj = Submission.find_by(id: params[:id])
+  end
+
+
 end
