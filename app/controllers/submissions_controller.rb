@@ -66,6 +66,7 @@ end
 
     if is_logged_in?
       if @submission_obj.member == current_member
+        # binding.pry
               @submission_obj.update(
             category: params[:category],
             author: params[:author],

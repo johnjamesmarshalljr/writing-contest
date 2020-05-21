@@ -1,6 +1,4 @@
-h3 {
 
-}
 
 .topnav {
     background-color: #223;
@@ -65,7 +63,7 @@ h3 {
     background-color: rgb(221, 76, 19);
     color: white;
     padding: 7px 24px;
-    margin: 8px 0;
+    margin: 8px 8px;
     border: none;
     cursor: pointer;
     font-size: 10px;
@@ -169,7 +167,7 @@ h3 {
     margin-top: 4px;
     color: white;
   text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-    background-color: #99ccff;
+    background-color: #b472cc;
     color: white;
     padding: 4px 9px;
     margin: 8px 0;
@@ -184,8 +182,8 @@ h3 {
   .zig-zag { border: none; width: 50%; margin: auto; margin-top: 5%; margin-bottom: 5%; height: 40px; background: linear-gradient(135deg, #ECEDDC 25%, transparent 25%) -20px 0, linear-gradient(225deg, #ECEDDC 25%, transparent 25%) -20px 0, linear-gradient(315deg, #ECEDDC 25%, transparent 25%), linear-gradient(45deg, #ECEDDC 25%, transparent 25%); background-size: 40px 40px; background-color: #EC173A;}
 
   @keyframes example {
-  from {background-color: pink;}
-  to {background-color: purple;}
+  from {background-color: #c7b3e8;}
+  to {background-color:#7b98e8;}
 }
 
 /* The element to apply the animation to */
@@ -193,7 +191,7 @@ div[class=Thx] {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 75%;
   background-color: skyblue;
   animation-name: example;
   animation-duration: 4s;

@@ -18,9 +18,9 @@ show where to sign up -->
     <% @submissions.each.with_index(1) do |sub, idx|%>
     <ul>
       <li><%=idx%>) Title: <a href="/submissions/<%=sub.id%>"><%=sub.title%></a></li>
-      <li>Category:<%=sub.category %></li>
+      <li>Category: <%=sub.category %></li>
       <li>Date Published: <%=sub.date_published %></li>
-      <a href="/submissions/<%=sub.id%>/edit">Edit</a><br>
+      <a style="color:#7343bf" href="/submissions/<%=sub.id%>/edit">Edit</a><br>
       <form action="/submissions/<%=sub.id%>" method="POST">
           <input type="hidden" name="_method" id="hidden" value="DELETE">
           <input type='submit' class="delete_button" value= 'Delete Submission'>
