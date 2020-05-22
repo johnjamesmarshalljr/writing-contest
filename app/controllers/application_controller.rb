@@ -21,6 +21,9 @@ class ApplicationController < Sinatra::Base
       def current_member
          @current_member ||= Member.find(session[:member_id]) if is_logged_in?
       end
+      def authorized_to_edit?(submission)
+        submission.member == current_member
+      end
     end
 
 end

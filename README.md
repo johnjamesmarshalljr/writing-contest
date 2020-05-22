@@ -4,7 +4,9 @@ This is a streamlined version of the LSWA Sports Writing Contest. Each year, the
 Through this new web app, members will be able to easily submit their articles, keep track of their submissions, edit them or delete them. Judges will have access to submissions, which are tagged with the requisite category number for each competition.
 
 --Watch this video to see how it works!--
---Blog post about the app--
+https://www.youtube.com/watch?v=7TVCSSG_gRQ&feature=youtu.be
+--Blog post --
+https://jerkzilla.github.io/sinatra_project
 
 ## Built With
 

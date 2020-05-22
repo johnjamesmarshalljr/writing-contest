@@ -86,9 +86,13 @@ end
 
   delete '/submissions/:id' do #delete obj from table
     redirect '/' if !(is_logged_in?)
-    @submission_obj = Submission.find_by(id: params[:id])
-    @submission_obj.delete # | @submission_obj.destory
-    redirect '/submissions'
+    set_submission
+    if authorized_to_edit?(@submission_obj)
+      @submission_obj.delete # | @submission_obj.destory
+      redirect '/submissions'
+    else 
+      redirect '/submissions'
+    end
   end
 
   def set_submission
