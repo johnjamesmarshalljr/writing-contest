@@ -8,13 +8,10 @@ class SessionsController < ApplicationController
 
   post '/login' do
     #recieve the log in form, find user and log them in (create a session)
-    # binding.pry
     found_member = Member.find_by(email: params[:email])
-
     if found_member && found_member.authenticate(params[:password]) # find a user & password is right
-      # login & redirct sowmehere in site
+      # login & redirect sowmehere in site
       session[:member_id] = found_member.id #this logs the user in
-      # @member = current_member
       redirect "/members/#{found_member.id}"
     else
       # ADD ERROR: alert('Error with login info ')
