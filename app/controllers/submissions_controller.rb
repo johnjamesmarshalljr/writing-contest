@@ -2,13 +2,12 @@ class SubmissionsController < ApplicationController
 
   get '/submissions' do # index
     redirect '/' if !(is_logged_in?)
-    #update -- list just this year
     @member = current_member
-    @submissions = @member.submissions # <~ connect 2 table via MODEL
-    erb :'submissions/index.html' # render the index view
+    @submissions = @member.submissions
+    erb :'submissions/index.html'
   end
 
-  get '/submissions/new' do # display form to create a new submission obj
+  get '/submissions/new' do
     erb :'submissions/new.html'
   end
 
@@ -29,8 +28,6 @@ class SubmissionsController < ApplicationController
 
   get '/submissions/:id' do # SHOW route
     redirect '/' if !(is_logged_in?)
-    # display ONE  obj
-    # binding.pry
     @submission_obj = Submission.find_by(id: params[:id])
     @member = current_member
     @submissions = @member.submissions.all
@@ -44,7 +41,6 @@ class SubmissionsController < ApplicationController
   end
 
   get '/submissions/:id/edit' do # EDIT route
-    # display form to edit obj
     set_submission
     if is_logged_in?
       if @submission_obj.member == current_member
@@ -57,7 +53,7 @@ class SubmissionsController < ApplicationController
   end
   end
 
-  patch '/submissions/:id' do # update data in table w/user input
+  patch '/submissions/:id' do
     set_submission
 
     if is_logged_in?
@@ -79,7 +75,7 @@ class SubmissionsController < ApplicationController
       end
     end
 
-      delete '/submissions/:id' do #delete obj from table
+      delete '/submissions/:id' do
         redirect '/' if !(is_logged_in?)
         set_submission
         if authorized_to_edit?(@submission_obj)

@@ -169,10 +169,10 @@
   text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
     background-color: #b472cc;
     color: white;
-    padding: 4px 9px;
+    padding: 2px 4px;
     margin: 8px 0;
     border: none;
-    font-size: 20px;
+    font-size: 30px;
     text-align: center;
     border-radius: 1px;
     display: inline-block;
@@ -191,7 +191,7 @@ div[class=Thx] {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 75%;
+  width: 50%;
   background-color: skyblue;
   animation-name: example;
   animation-duration: 4s;
