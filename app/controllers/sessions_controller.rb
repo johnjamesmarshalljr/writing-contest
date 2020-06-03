@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
       session[:member_id] = found_member.id
       redirect "/members/#{found_member.id}"
     else
+      @error = 'invalid login'
        erb :'sessions/new'
     end
   end

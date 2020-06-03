@@ -22,9 +22,16 @@ class ApplicationController < Sinatra::Base
          @current_member ||= Member.find(session[:member_id]) if is_logged_in?
       end
 
-      def authorized_to_edit?(submission)
-        submission.member == current_member
+      def authorized_to_edit?(record)
+        record.member == current_member
       end
+
+      def redirect_if_not_logged_in
+        if  !is_logged_in?
+          redirect '/'
+        end
+      end
+
     end
 
 end

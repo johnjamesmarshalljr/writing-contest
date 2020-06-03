@@ -1,7 +1,7 @@
 class SubmissionsController < ApplicationController
 
   get '/submissions' do # index
-    redirect '/' if !(is_logged_in?)
+    redirect_if_not_logged_in
     @member = current_member
     @submissions = @member.submissions
     erb :'submissions/index.html'
@@ -12,23 +12,18 @@ class SubmissionsController < ApplicationController
   end
 
   post '/submissions' do # create a new sub obj based on form (user) input
-    if !is_logged_in?
-      redirect '/'
-    end
-
-    if params[:article] != ""
-      member = current_member
-      @new_submission = member.submissions.new(params)
-      @new_submission.save
-    redirect "/submissions/#{@new_submission.id}"
+    redirect_if_not_logged_in
+    @new_submission = current_member.submissions.new(params)
+    if @new_submission.save
+      redirect "/submissions/#{@new_submission.id}"
     else
       redirect '/submissions/new'
     end
   end
 
   get '/submissions/:id' do # SHOW route
-    redirect '/' if !(is_logged_in?)
-    @submission_obj = Submission.find_by(id: params[:id])
+    redirect_if_not_logged_in
+    set_submission
     @member = current_member
     @submissions = @member.submissions.all
     @my_article = @submission_obj.article
@@ -41,22 +36,21 @@ class SubmissionsController < ApplicationController
   end
 
   get '/submissions/:id/edit' do # EDIT route
+    redirect_if_not_logged_in
     set_submission
-    if is_logged_in?
       if @submission_obj.member == current_member
         erb :'submissions/edit.html'
       else
         redirect "members/#{current_member.id}"
       end
-    else
-    redirect '/'
-  end
+
+
   end
 
   patch '/submissions/:id' do
     set_submission
 
-    if is_logged_in?
+    redirect_if_not_logged_in
       if @submission_obj.member == current_member
           @submission_obj.update(
             category: params[:category],
@@ -70,13 +64,11 @@ class SubmissionsController < ApplicationController
       else
         redirect "members/#{current_member.id}"
       end
-      else
-        redirect '/'
-      end
+
     end
 
       delete '/submissions/:id' do
-        redirect '/' if !(is_logged_in?)
+        redirect_if_not_logged_in
         set_submission
         if authorized_to_edit?(@submission_obj)
           @submission_obj.delete # | @submission_obj.destory
@@ -86,6 +78,7 @@ class SubmissionsController < ApplicationController
         end
       end
 
+      private
       def set_submission
         @submission_obj = Submission.find_by(id: params[:id])
       end
