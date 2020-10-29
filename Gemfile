@@ -6,6 +6,13 @@ gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem 'rake'
 gem 'require_all'
 gem 'sqlite3', '~> 1.3.6'
+group :development, :test do 
+  gem 'sqlite3'    #gem to use in development-test environment
+end
+
+group :production do 
+  gem 'pg', '~> 0.18'
+end
 gem 'pg', '~> 0.18'
 gem 'shotgun'
 gem 'pry'
