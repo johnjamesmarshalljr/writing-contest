@@ -7,6 +7,7 @@ Through this new web app, members will be able to easily submit their articles, 
 
 --Watch this video to see how it works!--
 https://www.youtube.com/watch?v=7TVCSSG_gRQ&feature=youtu.be
+
 --Blog post --
 https://jerkzilla.github.io/sinatra_project
 
