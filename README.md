@@ -21,6 +21,7 @@ HTML5 & CSS
 ## Usage
 
 This app is hosted on Heroku: https://lswa-writing-contest.herokuapp.com/
+
 App might take time to load sometimes. The reason is that heroku puts apps which are on free plan to sleep after 30 minutes of inactivity. So when you visit the website, the app is waked from sleep which takes a little time!
 
 ##development
