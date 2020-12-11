@@ -11,7 +11,7 @@ class MembersController < ApplicationController
         redirect "/members/#{@member.id}"
     else
       erb :'members/new'
-    end
+    end 
   end
 
   get '/members/:id' do #profile SHOW

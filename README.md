@@ -4,9 +4,9 @@ This is a streamlined version of the LSWA Sports Writing Contest. Each year, the
 Through this new web app, members will be able to easily submit their articles, keep track of their submissions, edit them or delete them. Judges will have access to submissions, which are tagged with the requisite category number for each competition.
 
 --Watch this video to see how it works!--
-https://www.youtube.com/watch?v=7TVCSSG_gRQ&feature=youtu.be
+https://youtu.be/zJMfMukpXjw
 --Blog post --
-https://jerkzilla.github.io/sinatra_project
+https://johnjamesmarshalljr.medium.com/sinatra-project-5c056f333eeb
 
 ## Built With
 
@@ -17,7 +17,7 @@ HTML5 & CSS
 
 ## Usage
 
-This app is hosted on Heroku -------website-----
+This app is hosted on Heroku: https://lswa-writing-contest.herokuapp.com/
 App might take time to load sometimes. The reason is that heroku puts apps which are on free plan to sleep after 30 minutes of inactivity. So when you visit the website, the app is waked from sleep which takes a little time!
 
 ##development
@@ -30,13 +30,15 @@ For interactive console
 $ bundle exec tux
 
 #Future improvements
-  -Add "judges" class to give access to submissions to be judged
-  -Add submissions sections for .PDF files and photos
+-Add "judges" class to give access to submissions to be judged
+-Add submissions sections for .PDF files and photos
 
 ## Contributing
+
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
 ## License
+
 [MIT](https://choosealicense.com/licenses/mit/)
